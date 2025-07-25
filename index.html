@@ -155,7 +155,7 @@
     intro?.classList.add('inactive');
     home?.classList.remove('inactive');
     home?.classList.add('active');
-    home?.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo(0, 0);
   });
 
   const stringsLink = document.querySelector('a[href="#strings"]');
