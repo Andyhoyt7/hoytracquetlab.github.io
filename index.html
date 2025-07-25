@@ -49,6 +49,21 @@
     visibility: visible;
   }
   </style>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <style>
+  /* 1) Make the wrapper fill its container */
+  .calendly-inline-widget {
+    width: 100% !important;
+    min-width: 320px;    /* whatever your mobile floor is */
+    height: 600px;       /* bump this up if you want more vertical room */
+  }
+
+  /* 2) Force the injected iframe to fill the wrapper immediately */
+  .calendly-inline-widget iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>
  </head>
  <body class="loading">
   <svg display="none" height="0" version="1.1" viewbox="0 0 40 40" width="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
