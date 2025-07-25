@@ -121,16 +121,18 @@
         our selection</a>.
       </p>
       <h2 class="style4" id="text04" style="margin-top: 3em;">
-       Booking & Contact
+       Booking &amp; Contact
       </h2>
       <hr id="divider02"/>
       <p class="style5" id="text08">
-       Let us know when you're dropping off your racquet.
+       Let us know when you’re dropping off your racquet.
       </p>
+      <!-- 1) the correctly‑escaped inline widget -->
       <div class="calendly-inline-widget"
-       data-url="https://calendly.com/hoytracquetlab?hide_gdpr_banner=1&background_color=f0ebe6&text_color=528959&primary_color=528959"
+       data-url="https://calendly.com/hoytracquetlab?hide_gdpr_banner=1&amp;background_color=f0ebe6&amp;text_color=528959&amp;primary_color=528959"
        style="min-width:320px;height:500px;">
-       </div>
+      </div>
+      <!-- 2) Calendly’s loader script -->
       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
       <p class="style5" id="text16">
