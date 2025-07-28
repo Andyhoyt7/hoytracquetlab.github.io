@@ -1540,7 +1540,6 @@
       line-height: 1.625;
       font-family: 'Azeret Mono', monospace;
       letter-spacing: 0.05rem;
-      padding-left: 0.05rem;
     }
 
     #form01 .actions button {
@@ -1716,9 +1715,9 @@
 
 <body class="loading">
 
-  <svg display="none" height="0" version="1.1" viewbox="0 0 40 40" width="0" xmlns="http://www.w3.org/2000/svg"
+  <svg display="none" height="0" version="1.1" viewBox="0 0 40 40" width="0" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <symbol id="icon-f2d5aa0cc1257932de0ad4747b697301" viewbox="0 0 40 40">
+    <symbol id="icon-f2d5aa0cc1257932de0ad4747b697301" viewBox="0 0 40 40">
       <path
         d="M7.6,30.5l10.3-10.3L7.6,9.9c-0.2-0.2-0.2-0.5,0-0.7L9,7.8c0.2-0.2,0.5-0.2,0.7,0L20,18L30.3,7.8c0.2-0.2,0.5-0.2,0.7,0 l1.4,1.4c0.2,0.2,0.2,0.5,0,0.7L22.2,20.2l10.3,10.3c0.2,0.2,0.2,0.5,0,0.7L31,32.6c-0.2,0.2-0.5,0.2-0.7,0L20,22.4L9.7,32.6 c-0.2,0.2-0.5,0.2-0.7,0l-1.5-1.5C7.4,31,7.4,30.6,7.6,30.5z">
       </path>
@@ -1737,13 +1736,13 @@
           </div>
         </section>
         <section id="home-section">
-          <h2 class="style4" id="text02" style="margin-bottom: 1em;">
+          <h2 class="style4 mb-1em" id="text02">
             <span class="p">
               Serving players<br />
               who demand precision
             </span>
           </h2>
-          <p class="style5" id="text03" style="margin-bottom: 1em;">
+          <p class="style5 mb-1em" id="text03">
             Strings, tension, swingweight — it all matters. We optimize your racquet to match your game.
           </p>
           <div class="image" id="image01">
@@ -1751,7 +1750,7 @@
               <img alt="" src="images/tennis-balls.png" />
             </span>
           </div>
-          <h2 class="style4" id="services-heading" style="margin-top: 1em;">
+          <h2 class="style4 mt-1em" id="services-heading">
             Services
           </h2>
           <hr class="section-divider" />
@@ -1841,7 +1840,7 @@
             </div>
             <input name="id" type="hidden" value="form01" />
           </form>
-          <p class="style5" id="text09" style="text-align: center;">
+          <p class="style5" id="copyright" style="text-align: center;">
             2025 Hoyt Racquet Lab. All rights reserved.
           </p>
         </section>
@@ -1918,6 +1917,7 @@
     <div class="modal-content">
       <button aria-label="Close" class="modal-close" id="close-modal">
         ×
+        <span class="visually-hidden">Close</span>
       </button>
       <div class="modal-inner">
         <h2 class="style4">
@@ -2117,6 +2117,21 @@
     .modal-inner ul {
       margin-bottom: 1rem;
     }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    /* Remove inline styles from headings and use these classes instead */
+    .mb-1em { margin-bottom: 1em !important; }
+    .mt-1em { margin-top: 1em !important; }
+    .text-center { text-align: center !important; }
   </style>
   <!-- GoatCounter analytics -->
   <script data-goatcounter="https://hoytracquetlab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
