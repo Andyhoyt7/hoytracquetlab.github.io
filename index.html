@@ -1332,8 +1332,13 @@
       display: none;
     }
 
-    @media (max-width: 1680px),
-    (max-width: 1280px) {
+    @media (max-width: 1680px) {
+      html {
+        font-size: 16pt;
+      }
+    }
+
+    @media (max-width: 1280px) {
       html {
         font-size: 16pt;
       }
@@ -1346,8 +1351,12 @@
     }
 
     @media (max-width: 736px) {
-      html {
-        font-size: 13pt;
+      #main>.inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
       }
     }
 
@@ -1549,18 +1558,19 @@
     }
 
     @media (max-width: 480px) {
-      #wrapper {
-        padding: 0.84375rem 0.84375rem 0.84375rem 0.84375rem;
-      }
-
       #main>.inner {
-        --spacing: 1.203125rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
       }
+    }
 
-      #form01 .actions button {
-        max-width: 32rem;
-        width: 100%;
-      }
+    #main>.inner {
+      --spacing: 1.203125rem;
+    }
+
+    #form01 .actions button {
+      max-width: 32rem;
+      width: 100%;
     }
 
     @media (max-width: 360px) {
