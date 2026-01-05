@@ -117,6 +117,24 @@
       vertical-align: baseline;
     }
 
+    #fade-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #FCF9F2;
+      /* cream */
+      opacity: 0;
+      pointer-events: none;
+      z-index: 99999;
+      transition: opacity 0.6s ease;
+    }
+
+    #fade-overlay.active {
+      opacity: 1;
+    }
+
     article,
     aside,
     details,
@@ -1903,6 +1921,25 @@
       home?.classList.add('inactive');
       stringsSection?.classList.add('inactive');
     });
+    // Automatically move to home after 2 seconds with cream fade
+    setTimeout(() => {
+      const overlay = document.getElementById('fade-overlay');
+
+      // Fade to cream
+      overlay?.classList.add('active');
+
+      // After fade completes, switch sections
+      setTimeout(() => {
+        intro?.classList.add('inactive');
+        home?.classList.remove('inactive');
+        home?.classList.add('active');
+        window.scrollTo(0, 0);
+
+        // Fade back out to reveal the home section
+        overlay?.classList.remove('active');
+      }, 600); // matches the CSS transition (0.6s)
+    }, 2000); // 2 seconds on the intro screen
+
   </script>
   <style>
     #intro-section.active,
@@ -2164,6 +2201,7 @@
       logoBlock?.classList.add('fade-in');
     });
   </script>
+  <div id="fade-overlay"></div>
 </body>
 
 </html>
