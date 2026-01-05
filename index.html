@@ -1885,62 +1885,51 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const introLink = document.querySelector('#intro-section a[href="#home"]');
       const intro = document.getElementById('intro-section');
       const home = document.getElementById('home-section');
-
-      introLink?.addEventListener('click', function (e) {
-        e.preventDefault();
-        intro?.classList.add('inactive');
-        home?.classList.remove('inactive');
-        home?.classList.add('active');
-        window.scrollTo(0, 0);
-      });
-
-      const stringsLink = document.querySelector('a[href="#strings"]');
-      const stringsSection = document.getElementById('strings-section');
-      const closeBtn = stringsSection?.querySelector('.icons a');
-
-      stringsLink?.addEventListener('click', function (e) {
-        e.preventDefault();
-        stringsSection?.classList.remove('inactive');
-        stringsSection?.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-
-      closeBtn?.addEventListener('click', function (e) {
-        e.preventDefault();
-        stringsSection?.classList.add('inactive');
-        stringsSection?.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-
-      // Initial visibility setup
-      intro?.classList.add('active');
-      home?.classList.remove('active');
-      home?.classList.add('inactive');
-      stringsSection?.classList.add('inactive');
-    });
-    // Automatically move to home after 2 seconds with cream fade
-    setTimeout(() => {
       const overlay = document.getElementById('fade-overlay');
 
-      // Fade to cream
-      overlay?.classList.add('active');
+      // --- Initial visibility setup ---
+      intro?.classList.add('active');
+      intro?.classList.remove('inactive');
 
-      // After fade completes, switch sections
+      home?.classList.add('inactive');
+      home?.classList.remove('active');
+
+      // If you still have a #strings-section elsewhere, keep it hidden
+      const stringsSection = document.getElementById('strings-section');
+      stringsSection?.classList.add('inactive');
+      stringsSection?.classList.remove('active');
+
+      // --- Auto advance with cream fade ---
       setTimeout(() => {
-        intro?.classList.add('inactive');
-        home?.classList.remove('inactive');
-        home?.classList.add('active');
-        window.scrollTo(0, 0);
+        // Fade to cream
+        overlay?.classList.add('active');
 
-        // Fade back out to reveal the home section
-        overlay?.classList.remove('active');
-      }, 600); // matches the CSS transition (0.6s)
-    }, 2000); // 2 seconds on the intro screen
+        // After fade completes, switch sections
+        setTimeout(() => {
+          intro?.classList.add('inactive');
+          intro?.classList.remove('active');
 
+          home?.classList.remove('inactive');
+          home?.classList.add('active');
+
+          window.scrollTo(0, 0);
+
+          // Fade overlay back out
+          overlay?.classList.remove('active');
+        }, 600); // matches CSS transition duration (0.6s)
+      }, 2000); // time spent on intro before transition
+    });
+
+    // Keep your existing "loading" behavior + logo fade-in:
+    window.addEventListener('load', function () {
+      document.body.classList.remove('loading');
+      const logoBlock = document.getElementById('intro-logo-block');
+      logoBlock?.classList.add('fade-in');
+    });
   </script>
+
   <style>
     #intro-section.active,
     #home-section.active,
