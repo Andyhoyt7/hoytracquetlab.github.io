@@ -1624,17 +1624,6 @@
       padding-right: 0.875rem;
     }
 
-    /* Hard-center the form block (works even if a parent flex rule interferes) */
-    #form01 .inner {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0 !important;
-      /* overrides any earlier margin rules */
-      width: min(25rem, 100%);
-      box-sizing: border-box;
-    }
-
 
     @media (max-width: 360px) {
       #wrapper {
@@ -1818,6 +1807,25 @@
     body:before {
       width: 100% !important;
       left: 0 !important;
+    }
+
+    /* FIX form centering */
+    #form01 {
+      display: block;
+      /* overrides global form flex rules */
+      width: 100%;
+    }
+
+    #form01 .inner {
+      width: min(25rem, 100%);
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    #form01 .actions {
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
