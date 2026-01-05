@@ -1586,6 +1586,44 @@
       font-size: 0.875em;
     }
 
+    /* --- FORM CENTERING FIX (put at very end of the main <style>) --- */
+
+    /* Don’t use flex on the <form> itself (it can create weird centering behavior) */
+    #form01 {
+      display: block !important;
+      width: 100%;
+    }
+
+    /* Center the actual form block */
+    #form01 .inner {
+      width: min(25rem, 100%);
+      margin: 0 auto !important;
+    }
+
+    /* Center the submit row */
+    #form01 .actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Undo the rule that makes the button left-aligned + tiny */
+    #form01 .actions button {
+      display: inline-flex !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+
+    /* Option A: equal left/right padding inside fields */
+    #form01 input[type="text"],
+    #form01 input[type="email"],
+    #form01 input[type="tel"],
+    #form01 input[type="number"],
+    #form01 textarea,
+    #form01 select {
+      padding-left: 0.875rem;
+      padding-right: 0.875rem;
+    }
+
 
     @media (max-width: 360px) {
       #wrapper {
