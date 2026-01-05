@@ -1813,6 +1813,12 @@
     #copyright {
       margin-top: 2rem !important;
     }
+
+    /* Fix subtle “off-center” illusion caused by 100vw including scrollbar */
+    body:before {
+      width: 100% !important;
+      left: 0 !important;
+    }
   </style>
 </head>
 
