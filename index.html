@@ -1624,6 +1624,17 @@
       padding-right: 0.875rem;
     }
 
+    /* Hard-center the form block (works even if a parent flex rule interferes) */
+    #form01 .inner {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0 !important;
+      /* overrides any earlier margin rules */
+      width: min(25rem, 100%);
+      box-sizing: border-box;
+    }
+
 
     @media (max-width: 360px) {
       #wrapper {
